@@ -6,4 +6,4 @@ This is the official implementation of **HENet: Hybrid Encoding for End-to-end M
 * 2024/04/03 - Code: coming soon.
 
 ## License
-The project is only free for academic research purposes, but needs authorization forcommerce. For commerce permission, please contact wyt@pku.edu.cn.
+The project is only free for academic research purposes, but needs authorization for commerce. For commerce permission, please contact wyt@pku.edu.cn.
