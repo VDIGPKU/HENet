@@ -28,7 +28,7 @@ It reduces training costs through hybrid image encoding and mitigates multi-task
 <img src="https://github.com/VDIGPKU/HENet/blob/main/assets/vis.png" width="700"/>
 
 Visualization results of HENet and baselines on end-to-end multi-tasking. 
-The proposed HENet estimates occluded objects better through long-term information and has more accurate predictions through high-resolution information.
+The proposed HENet estimates occluded objects better through long-term information and have more accurate predictions through high-resolution information.
 
 ## Main Results
 
@@ -38,9 +38,9 @@ The proposed HENet estimates occluded objects better through long-term informati
 
 ## Getting Started
 
-### environment
+### Environment
 
-The code is tested in the following two environment:
+The code is tested in the following two environments:
 
 ```
 cuda     12.1
@@ -87,7 +87,7 @@ cd detr2
 python setup.py develop
 ```
 
-### data preparetion
+### Data Preparation
 
 Please download nuScenes-v1.0-trainval and nuScenes-map-expansion-v1.3
 at [nuScenes.org](https://www.nuscenes.org/nuscenes) and `CVPR23-Occupancy/gts.tar.gz` at
@@ -113,27 +113,27 @@ corresponding paths in config files.
 |   |   ├── v1.0-trainval
 ```
 
-Prepare nuscenes data by running
+Prepare nuScenes data by running:
 
 ```bash
 python tools/create_data_nuscenes_C.py
 ```
 
-### training
+### Training
 
 ```bash
 ./tools/dist_train.sh $config_path $gpus
 ```
 
-### testing
+### Testing
 
-testing on validation set
+Testing on validation set:
 
 ```bash
 ./tools/dist_test.sh $config_path $checkpoint_path $gpus --eval bbox
 ```
 
-testing on test set
+Testing on test set:
 
 ```bash
 ./tools/dist_test.sh $config_path $checkpoint_path $gpus --format-only --eval-options 'jsonfile_prefix=work_dirs'
@@ -145,7 +145,7 @@ If you have any other questions, please refer to
 
 ## Acknowledgements
 
-We sincerely thank these excellent open source projects:
+We sincerely thank these excellent open-source projects:
 
 - [BEVDet](https://github.com/HuangJunJie2017/BEVDet)
 - [mmdetection3d](https://github.com/open-mmlab/mmdetection3d)
@@ -154,7 +154,7 @@ We sincerely thank these excellent open source projects:
 
 ## Citation
 
-If this work is helpful for your research, please consider to cite our paper [HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras](https://arxiv.org/pdf/2404.02517)
+If this work is helpful for your research, please consider citing our paper [HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras](https://arxiv.org/pdf/2404.02517)
 
 ```
 @inproceedings{xia2024henet,
@@ -166,4 +166,4 @@ If this work is helpful for your research, please consider to cite our paper [HE
 ```
 
 ## License
-The project is only free for academic research purposes, but needs authorization for commerce. For commerce permission, please contact wyt@pku.edu.cn.
+The project is only free for academic research purposes but needs authorization for commerce. For commerce permission, please contact wyt@pku.edu.cn.
