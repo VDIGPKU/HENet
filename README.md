@@ -119,12 +119,6 @@ Prepare nuscenes data by running
 python tools/create_data_nuscenes_C.py
 ```
 
-For SparseBEV + nuScenes, run
-
-```bash
-python tools/create_data_nuscenes_sparsebev.py
-```
-
 ### training
 
 ```bash
