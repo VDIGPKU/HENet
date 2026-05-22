@@ -37,7 +37,7 @@ and delivering more comprehensive information to the planning module.
 
 <img src="assets/demopp.gif" width="700"/>
 
-
+Through improvements in model architecture and pre-training based on model merging, HENet++ achieves superior multi-task and single-task performance.
 
 
 
