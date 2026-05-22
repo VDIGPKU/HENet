@@ -1,40 +1,64 @@
-# HENet
+# HENet Series
 
-[Paper](https://arxiv.org/pdf/2404.02517) | Zhongyu Xia, ZhiWei Lin, Xinhao Wang, Yongtao Wang, Yun Xing, Shengxiang Qi, Nan Dong, Ming-Hsuan Yang
+This is the official implementation of **HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras**
+(ECCV 2024, [Paper](https://arxiv.org/pdf/2404.02517)) and **HENet++: Hybrid Encoding and Multi-task Learning for 3D Perception and End-to-end Autonomous Driving**
+([Paper](https://arxiv.org/pdf/2511.07106)).
 
-This is the official implementation of **HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras**.
 
-Contact us with xiazhongyu@pku.edu.cn, wyt@pku.edu.cn.
 
-## Update
-
-* 2024/07/07 - HENet has been accepted to ECCV 2024. We will release the code in this repository.
-
-* 2024/05/09 - We incorporated SparseBEV with HENet and achieved 1st place on [the nuScenes leaderboard / Vision track](https://www.nuscenes.org/object-detection?externalData=no&mapData=no&modalities=Camera).
-
-* 2024/04/03 - We released our paper on [arXiv](https://arxiv.org/abs/2404.02517).
-
-## Introduction
+## HENet Introduction
 
 HENet is an end-to-end multi-task 3D perception framework. 
 It reduces training costs through hybrid image encoding and mitigates multi-task conflicts through independent BEV feature encoding.
 
-<img src="https://github.com/VDIGPKU/HENet/blob/main/assets/arch.png" width="700"/>
+<img src="assets/arch.png" width="700"/>
 
 ### Demo
 
-<img src="https://github.com/VDIGPKU/HENet/blob/main/assets/demo.gif" width="700"/>
+<img src="assets/demo.gif" width="700"/>
 
-<img src="https://github.com/VDIGPKU/HENet/blob/main/assets/vis.png" width="700"/>
+<img src="assets/vis.png" width="700"/>
 
 Visualization results of HENet and baselines on end-to-end multi-tasking. 
 The proposed HENet estimates occluded objects better through long-term information and have more accurate predictions through high-resolution information.
 
+
+
+## HENet++ Introduction
+
+HENet++ extends HENet to end-to-end planning. 
+It simultaneously extracts both dense and sparse features, 
+providing more suitable representations for different tasks, reducing cumulative errors, 
+and delivering more comprehensive information to the planning module.
+
+<img src="assets/archpp.png" width="700"/>
+
+### Demo
+
+<img src="assets/demopp.gif" width="700"/>
+
+
+
+
+
 ## Main Results
 
-|       | mAP | NDS |  mIoU | config | model |
-| :---: |  :---: | :---: | :---: |:----:| :---: |
-| HENet | 49.9 | 59.9 | 58.0 |  |  |
+This repository provides a sample model for hybrid encoding and multi-task decoding:
+
+
+|       | mAP  | NDS  |  mIoU |      config       |      model       |
+| :---: |:----:|:----:| :---: |:-----------------:|:----------------:|
+| HENet | 49.8 | 59.8 | 58.0 | [HENet](configs/henet/henet_det_bevseg.py) | [Google Drive](https://drive.google.com/drive/folders/1AYajSnL1JLrFOTHcpjX7WlRRLXUxQhwV?usp=sharing) |
+
+Additionally, this repository provides a student distilled model for HENet++ end-to-end autonomous driving. 
+This model was distilled using a high-precision HENet++ model as the teacher and achieves a comparable end-to-end collision rate. 
+It serves as a baseline and has been applied in the [KnowVal](https://github.com/VDIGPKU/KnowVal) and DrivingAgent frameworks.
+
+
+|         | UniAD L2 | UniAD Col | VAD L2 | VAD Col |                            config                             |      model       |
+|:-------:|:--------:|:---------:|:------:|:-------:|:-------------------------------------------------------------:|:----------------:|
+| HENet++ |   1.29   |   0.12%   |  0.55  |  0.04%  | [HENet++](configs/henetpp/henetpp_e2e_lightweight_distill.py) | [Google Drive](https://drive.google.com/drive/folders/1AYajSnL1JLrFOTHcpjX7WlRRLXUxQhwV?usp=sharing) |
+
 
 ## Getting Started
 
@@ -113,6 +137,8 @@ corresponding paths in config files.
 |   |   ├── v1.0-trainval
 ```
 
+We recommend that you download the processed data index file directly via this [Google Drive link](https://drive.google.com/drive/folders/1AYajSnL1JLrFOTHcpjX7WlRRLXUxQhwV?usp=sharing).
+
 Prepare nuScenes data by running:
 
 ```bash
@@ -154,9 +180,18 @@ We sincerely thank these excellent open-source projects:
 
 ## Citation
 
-If this work is helpful for your research, please consider citing our paper [HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras](https://arxiv.org/pdf/2404.02517)
+If this work is helpful for your research, please consider citing our paper 
+[HENet++](https://arxiv.org/pdf/2511.07106) and
+[HENet](https://arxiv.org/pdf/2404.02517).
 
 ```
+@article{xia2025henet++,
+  title={HENet++: Hybrid Encoding and Multi-task Learning for 3D Perception and End-to-end Autonomous Driving},
+  author={Xia, Zhongyu and Lin, Zhiwei and Wang, Yongtao and Yang, Ming-Hsuan},
+  journal={arXiv preprint arXiv:2511.07106},
+  year={2025}
+}
+
 @inproceedings{xia2024henet,
   title={HENet: Hybrid Encoding for End-to-end Multi-task 3D Perception from Multi-view Cameras},
   author={Xia, Zhongyu and Lin, Zhiwei and Wang, Xinhao and Wang, Yongtao and Xing, Yun and Qi, Shengxiang and Dong, Nan and Yang, Ming-Hsuan},

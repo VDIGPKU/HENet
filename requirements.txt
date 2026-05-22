@@ -1,0 +1,70 @@
+# optional
+
+open3d
+spconv-cu120  # please change it by your cuda version
+flash-attn
+
+
+# nuScenes
+
+nuscenes-devkit
+
+
+# argoverse 2
+av2
+refile
+pyarrow
+kornia
+
+
+# Waymo
+# waymo-open-dataset-tf-2-6-0==1.4.9
+
+  #  Waymo tookit has the tensorflow version in its name, if you don't use Waymo, it is recommended
+  #  to comment this line.
+
+  #  After installing Waymo Tookit, you will receive some version conflict warnings, and it is
+  #  possible that the version of your Numpy and other packages has been changed in a mess and
+  #  needs to be reinstalled back to the original version. I have not found a suitable solution
+  #  at this time.
+
+
+# runtime
+
+lyft_dataset_sdk
+networkx>=2.2,<2.3
+numba==0.53.0
+numpy
+nuscenes-devkit
+plyfile
+scikit-image
+# by default we also use tensorboard to log results
+tensorboard
+trimesh>=2.35.39,<2.35.40
+shapely==1.8.5
+
+
+# tests
+
+asynctest
+codecov
+flake8
+interrogate
+isort
+# Note: used for kwarray.group_items, this may be ported to mmcv in the future.
+kwarray
+pytest
+pytest-cov
+pytest-runner
+ubelt
+xdoctest >= 0.10.0
+yapf
+
+
+# mminstall
+
+mmcv-full>=1.4.8,<=1.6.2
+mmdet>=2.24.0,<=3.0.0
+mmsegmentation>=0.20.0,<=1.0.0
+
+
