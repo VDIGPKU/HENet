@@ -62,7 +62,9 @@ It serves as a baseline and has been applied in the [KnowVal](https://github.com
 
 ## Getting Started
 
-[KnowVal](https://github.com/VDIGPKU/KnowVal), [HENet](https://github.com/VDIGPKU/HENet), [R4Det](https://github.com/VDIGPKU/R4Det), [RCBEVDet](https://github.com/VDIGPKU/RCBEVDet), and [TEOcc](https://github.com/VDIGPKU/TEOcc) were developed under the same framework. If you have configured the environment for any one of them, you do not need to reconfigure the environment and can easily merge these repositories into one.
+[KnowVal](https://github.com/VDIGPKU/KnowVal), [HENet](https://github.com/VDIGPKU/HENet), [R4Det](https://github.com/VDIGPKU/R4Det), [RCBEVDet](https://github.com/VDIGPKU/RCBEVDet), and [TEOcc](https://github.com/VDIGPKU/TEOcc) were developed under the same framework. 
+You can easily merge these repositories into one.
+If you have prepared the environment for any of them, you do not need to create a new environment. 
 
 ### Environment
 
